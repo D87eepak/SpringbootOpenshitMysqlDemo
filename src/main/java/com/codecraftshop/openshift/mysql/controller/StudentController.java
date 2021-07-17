@@ -19,4 +19,10 @@ public class StudentController {
 	public List<Student> getStudents(){
 		return (List<Student>) studentRepository.findAll();
 	}
+	
+	@RequestMapping(value="/save")
+	public void saveStudents(){
+		Student student=new Student(1L, "A", "ABC");
+		studentRepository.save(student);
+	}
 }
